@@ -14,6 +14,7 @@
       <VARIABLE COL_INDEX="6" IS_VISIBLE="FALSE" VIEWDISP="Type" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="180,450,200" VERSION="0"/>
+    <SET ID="microblaze_0" IS_EXPANDED="TRUE"/>
     <STATUS>
       <SELECTIONS>
         <VARIABLE ID="INTERRUPT" PARENT="microblaze_0"/>
@@ -26,7 +27,7 @@
       <VARIABLE ID="microblaze_0_dlmb" ROW_INDEX="1"/>
       <VARIABLE ID="microblaze_0_d_bram_ctrl" ROW_INDEX="5"/>
       <VARIABLE ID="microblaze_0_bram_block" ROW_INDEX="4"/>
-      <VARIABLE ID="microblaze_0" ROW_INDEX="3"/>
+      <VARIABLE ID="microblaze_0" IS_EXPANDED="TRUE" ROW_INDEX="3"/>
       <VARIABLE ID="debug_module" ROW_INDEX="7"/>
       <VARIABLE ID="clock_generator_0" ROW_INDEX="15"/>
       <VARIABLE ID="axi4lite_0" ROW_INDEX="0"/>

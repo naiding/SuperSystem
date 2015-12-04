@@ -1,0 +1,112 @@
+/*
+ * gpio.c
+ *
+ *  Created on: 2015-12-1
+ *      Author: LEON
+ */
+
+#include "xparameters.h"
+#include "xgpio.h"
+#include "xintc.h"
+#include "stdio.h"
+
+void Initialize();
+void Delay_50ms();
+void PushBtnHandler(void * CallBackRef);
+void SwitchHandler(void * CallBackRef);
+XGpio Btns, Dips;
+XIntc intCtrl;
+int pshBtn, pshDip;
+int state1, state2;
+int IPISR_State;
+
+int main()
+{
+    Initialize();
+    xil_printf("\r\nRunning GpioInputInterrupt!\r\n");
+	Xil_Out8(XPAR_GPIO_0_BASEADDR + 0x120, 1);
+    while(1)
+    {
+    	//中断
+//        if (pshBtn)
+//        {
+//            xil_printf("Button Interrupt Triggered!!!the state is 0x%X\n\r",state1);
+//            pshBtn = 0;
+//        }
+//        if (pshDip)
+//        {
+//            xil_printf("Switch Interrupt Triggered!!!the state is 0x%X\n\r",state2);
+//            pshDip = 0;
+//        }
+
+//------------------------------------------------------------------------------------------
+
+    	//查询中断控制器
+
+//    	IPISR_State = Xil_In8(XPAR_GPIO_0_BASEADDR + 0x120);
+//    	if((IPISR_State&0x00000001)==0x1)
+//    	{
+//    		state1 = Xil_In8(XPAR_BUTTON_BASEADDR);
+//    		xil_printf("\r\n  Button state is %X.",state1);
+//
+//    		xil_printf("  The state of ISR is %X.",IPISR_State);
+//    		Xil_Out8(XPAR_GPIO_0_BASEADDR + 0x120, 0x1);
+//    		IPISR_State = Xil_In8(XPAR_GPIO_0_BASEADDR + 0x120);
+//    		xil_printf("  The ISR was cleared, it's state is %X.",IPISR_State);
+//    	}
+    }
+    return 0;
+}
+
+void Initialize()
+{
+    XGpio_Initialize(&Dips, XPAR_DIP_DEVICE_ID);
+    XGpio_SetDataDirection(&Dips, 1, 0xff);
+
+    XGpio_Initialize(&Btns, XPAR_BUTTON_DEVICE_ID);
+    XGpio_SetDataDirection(&Btns, 1, 0xff);
+
+    XIntc_Initialize(&intCtrl, XPAR_AXI_INTC_0_DEVICE_ID);
+
+    XGpio_InterruptEnable(&Btns, 1);
+    XGpio_InterruptGlobalEnable(&Btns);
+
+    XGpio_InterruptEnable(&Dips, 1);
+    XGpio_InterruptGlobalEnable(&Dips);
+
+    XIntc_Enable(&intCtrl, XPAR_AXI_INTC_0_BUTTON_IP2INTC_IRPT_INTR);
+    XIntc_Enable(&intCtrl, XPAR_AXI_INTC_0_DIP_IP2INTC_IRPT_INTR);
+
+    XIntc_Connect(&intCtrl, XPAR_AXI_INTC_0_BUTTON_IP2INTC_IRPT_INTR,
+        (XInterruptHandler)PushBtnHandler, (void *)0);
+    XIntc_Connect(&intCtrl, XPAR_AXI_INTC_0_DIP_IP2INTC_IRPT_INTR,
+        (XInterruptHandler)SwitchHandler,(void *)0);
+
+    microblaze_enable_interrupts();
+
+    microblaze_register_handler((XInterruptHandler)XIntc_InterruptHandler, (void *)&intCtrl);
+    XIntc_Start(&intCtrl, XIN_REAL_MODE);
+}
+
+void Delay_50ms()
+{
+    int i;
+    for (i = 0; i < 5000000; i++);
+}
+
+void PushBtnHandler(void * CallBackRef)
+{
+    state1 = XGpio_DiscreteRead(&Btns, 1);
+    pshBtn = 1;
+    XGpio_InterruptDisable(&Btns, 1);
+    Delay_50ms();
+    XGpio_InterruptClear(&Btns, 1);
+    XGpio_InterruptEnable(&Btns, 1);
+}
+
+void SwitchHandler(void * CallBackRef)
+{
+    state2 = XGpio_DiscreteRead(&Dips, 1);
+    pshDip = 1;
+    XGpio_InterruptClear(&Dips, 1);
+}

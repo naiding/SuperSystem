@@ -80,7 +80,7 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  373356 paths analyzed, 13285 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   6.644ns.
+ Minimum period is   6.483ns.
 --------------------------------------------------------------------------------
 
 
@@ -91,8 +91,8 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      4.000ns|      6.644ns|            0|            0|            0|       373356|
-| TS_clock_generator_0_clock_gen|     10.000ns|      6.644ns|          N/A|            0|            0|       373356|            0|
+|TS_sys_clk_pin                 |     10.000ns|      4.000ns|      6.483ns|            0|            0|            0|       373356|
+| TS_clock_generator_0_clock_gen|     10.000ns|      6.483ns|          N/A|            0|            0|       373356|            0|
 | erator_0_SIG_MMCM1_CLKOUT0    |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -108,7 +108,7 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    6.644|         |         |         |
+CLK            |    6.483|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -117,20 +117,20 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 373370 paths, 0 nets, and 15737 connections
+Constraints cover 373370 paths, 0 nets, and 15842 connections
 
 Design statistics:
-   Minimum period:   6.644ns   (Maximum frequency: 150.512MHz)
+   Minimum period:   6.483ns   (Maximum frequency: 154.250MHz)
 
 
-Analysis completed Fri Dec 04 15:32:34 2015 
+Analysis completed Fri Dec 04 18:32:55 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 447 MB
+Peak Memory Usage: 446 MB
 
 
 

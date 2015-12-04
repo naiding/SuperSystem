@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="system.bit" key="SuperSystem_hw_platform-bitFile"/>
+	<item value="C:\Users\LEON\Git\SuperSystem\SDK\SDK_Export\test\Debug\test.elf" key="SuperSystem_hw_platform-microblaze_0-initElf"/>
+	<item value="system_bd.bmm" key="SuperSystem_hw_platform-bmmFile"/>
+</section>

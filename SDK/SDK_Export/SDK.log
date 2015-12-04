@@ -1,0 +1,12 @@
+18:34:41.968 INFO  - Processing command line option -hwspec C:\SuperSystem\SDK\SDK_Export\hw\system.xml. 
+18:38:31.039 INFO  - Processing command line option -hwspec C:\SuperSystem\SDK\SDK_Export\hw\system.xml. 
+18:43:05.982 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to connect to Xilinx hw_server. Check if the
+    hw_server is running and correct TCP port is used.
+ 
+18:43:25.156 INFO  - FPGA configured successfully with bitstream "C:/SuperSystem/SDK/SDK_Export/SuperSystem_hw_platform/download.bit" 
+18:43:44.070 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+18:45:48.878 INFO  - FPGA configured successfully with bitstream "C:/Users/LEON/Git/SuperSystem/SDK/SDK_Export/SuperSystem_hw_platform/download.bit" 
+18:46:03.817 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

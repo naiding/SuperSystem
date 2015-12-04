@@ -1,10 +1,16 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Dec 04 15:30:29 2015
+// Written by: Map P.20131013 on Fri Dec 04 18:31:42 2015
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "Seg_GPIO_IO_pin<3>" LOCATE = SITE "N5" LEVEL 1;
 COMP "CLK" LOCATE = SITE "E3" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<15>" LOCATE = SITE "P4" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<10>" LOCATE = SITE "U2" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<11>" LOCATE = SITE "T3" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<12>" LOCATE = SITE "T1" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<13>" LOCATE = SITE "R3" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<14>" LOCATE = SITE "P3" LEVEL 1;
 COMP "Seg_GPIO2_IO_pin<3>" LOCATE = SITE "L4" LEVEL 1;
 COMP "Seg_GPIO2_IO_pin<4>" LOCATE = SITE "K3" LEVEL 1;
 COMP "Seg_GPIO2_IO_pin<1>" LOCATE = SITE "N1" LEVEL 1;
@@ -33,6 +39,8 @@ COMP "RESET" LOCATE = SITE "E16" LEVEL 1;
 COMP "LED_GPIO_IO_pin<1>" LOCATE = SITE "V9" LEVEL 1;
 COMP "LED_GPIO_IO_pin<4>" LOCATE = SITE "T5" LEVEL 1;
 COMP "LED_GPIO_IO_pin<3>" LOCATE = SITE "T6" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<9>" LOCATE = SITE "V2" LEVEL 1;
+COMP "Switch_GPIO_IO_I_pin<8>" LOCATE = SITE "U4" LEVEL 1;
 COMP "Switch_GPIO_IO_I_pin<7>" LOCATE = SITE "V5" LEVEL 1;
 COMP "Switch_GPIO_IO_I_pin<6>" LOCATE = SITE "V6" LEVEL 1;
 COMP "Switch_GPIO_IO_I_pin<5>" LOCATE = SITE "V7" LEVEL 1;
