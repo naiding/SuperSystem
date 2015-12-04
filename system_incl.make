@@ -72,7 +72,13 @@ implementation/system_microblaze_0_wrapper.ngc \
 implementation/system_debug_module_wrapper.ngc \
 implementation/system_clock_generator_0_wrapper.ngc \
 implementation/system_axi4lite_0_wrapper.ngc \
-implementation/system_rs232_wrapper.ngc
+implementation/system_rs232_wrapper.ngc \
+implementation/system_button_wrapper.ngc \
+implementation/system_switch_wrapper.ngc \
+implementation/system_axi_intc_0_wrapper.ngc \
+implementation/system_seg_wrapper.ngc \
+implementation/system_axi_timer_0_wrapper.ngc \
+implementation/system_led_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 
